@@ -117,7 +117,7 @@ def _frString(rleObjs):
     cdef bytes py_string
     cdef char* c_string
     for i, obj in enumerate(rleObjs):
-        py_string = str(obj['counts'].decode())
+        py_string = str(obj['counts'])
         c_string = py_string
         rleFrString( <RLE*> &Rs._R[i], <char*> c_string, obj['size'][0], obj['size'][1] )
     return Rs
