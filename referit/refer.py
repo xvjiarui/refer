@@ -60,8 +60,7 @@ class REFER:
         elif dataset == 'refclef':
             self.IMAGE_DIR = osp.join(data_root, 'images/saiapr_tc-12')
         else:
-            print('No refer dataset is called [%s]' % dataset)
-            sys.exit()
+            self.IMAGE_DIR = osp.join(data_root, 'images')
 
         # load refs from data/dataset/refs(dataset).json
         tic = time.time()
