@@ -330,7 +330,7 @@ class REFER:
 
     def __getattr__(self, attr):
         attr = convert(attr)
-        super(REFER, self).__getattribute__(attr)
+        return super(REFER, self).__getattribute__(attr)
 
 
 if __name__ == '__main__':
