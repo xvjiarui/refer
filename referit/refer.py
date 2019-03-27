@@ -25,6 +25,7 @@ get_mask    - get mask and area of the referred object given ref
 show_mask   - show mask of the referred object given ref
 """
 
+import re
 import sys
 import json
 import time
@@ -38,6 +39,11 @@ from referit.external import mask
 import matplotlib.pyplot as plt
 from matplotlib.collections import PatchCollection
 from matplotlib.patches import Polygon, Rectangle
+
+
+def convert(name):
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
 
 
 class REFER:
@@ -321,6 +327,10 @@ class REFER:
         msk = M['mask']
         ax = plt.gca()
         ax.imshow(msk)
+
+    def __getattr__(self, attr):
+        attr = convert(attr)
+        super(REFER, self).__getattr__(attr)
 
 
 if __name__ == '__main__':
