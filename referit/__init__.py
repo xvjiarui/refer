@@ -9,7 +9,7 @@ instances.
 from .refer import REFER
 
 REFER
-__author__ = 'licheng'
+__author__ = 'xvjiarui'
 
-VERSION_INFO = (1, 0, 0, 'dev0')
+VERSION_INFO = (2, 0, 0, 'dev0')
 __version__ = '.'.join(map(str, VERSION_INFO))
