@@ -165,7 +165,7 @@ class REFER:
             refs = self.data['refs']
         else:
             if not len(image_ids) == 0:
-                refs = [self.img_to_refs[image_id] for image_id in image_ids]
+                refs = [ref for ref in self.img_to_refs[image_id] for image_id in image_ids]
             else:
                 refs = self.data['refs']
             if not len(cat_ids) == 0:
